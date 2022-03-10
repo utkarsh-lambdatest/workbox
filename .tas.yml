@@ -1,0 +1,32 @@
+---
+# supported frameworks: mocha|jest|jasmine
+framework: mocha
+
+preRun:
+  # set of commands to run before running the tests like `yarn install`, `yarn build`
+  command:
+    - npm install
+    - npm run build
+
+postMerge:
+  pattern:
+    - test/**/sw/**/test-*.{js,mjs}"
+    - test/**/node/**/*.{js,mjs}"
+  # strategy for trigerring builds for post-merge
+  strategy:
+    threshold: 1
+    name: after_n_commits
+
+preMerge:
+  pattern:
+    - test/**/sw/**/test-*.{js,mjs}"
+    - test/**/node/**/*.{js,mjs}"
+
+# configure whether to smartSelect test-cases. Default true
+smartRun: true
+
+# number of containers in which the tests must be splitted into for execution
+parallelism: 1
+
+# version of tas file intended to be used in order to issue warnings for deprecation or breaking changes
+version: 1.0.0
