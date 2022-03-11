@@ -10,7 +10,11 @@ preRun:
 
 postMerge:
   pattern:
-    - './test/**/*.{js,mjs}'
+    - 'test/workbox-build/node/**/*.{js,mjs}'
+    - 'test/workbox-webpack-plugin/node/v4/**/*.{js,mjs}'
+    - 'test/workbox-webpack-plugin/node/v5/**/*.{js,mjs}'
+    - 'test/workbox-cli/node/**/*.{js,mjs}'
+    - 'test/all/node/**/*.{js,mjs}'
   # strategy for trigerring builds for post-merge
   strategy:
     threshold: 1
@@ -18,7 +22,11 @@ postMerge:
 
 preMerge:
   pattern:
-    - './test/**/*.{js,mjs}'
+    - 'test/workbox-build/node/**/*.{js,mjs}'
+    - 'test/workbox-webpack-plugin/node/v4/**/*.{js,mjs}'
+    - 'test/workbox-webpack-plugin/node/v5/**/*.{js,mjs}'
+    - 'test/workbox-cli/node/**/*.{js,mjs}'
+    - 'test/all/node/**/*.{js,mjs}'
 
 # configure whether to smartSelect test-cases. Default true
 smartRun: true
